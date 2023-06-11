@@ -1,0 +1,4 @@
+.gitattributes
+maingrid.exe
+Command for pyinstaller.txt
+upx/
