@@ -11,13 +11,13 @@ import webbrowser
 import copy
 from tkinter import ttk, filedialog
 
-
 # ============== Global Variables ==============
 
 FILENAME = str()
 COLUMNS = list()
 SHEETNAME = str()
 BACKGROUND_HEX = '#7FC4F5'
+icon_base64 = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwABOvYAATr2ATqxVzoAAAAHdElNRQfnBgcOJTFmsbFUAAAA60lEQVRIx92UMQ6CMBRAn5aROLgwYLiJRm/gYsLg7FG8AdzBcAijnsEDEHVgdoXUARNR2lrAhMTP0tD09fe/9kPHGCj+hcwpLNYK9uxUEzHS8ovA0dBzMnJlfgASB69cqwNkrLgaABMSfBOg4MbFWLtnlYZtKl+N/gEOELKoeJfMmgKmbLplAO/ex7jNAS/vki3r5oCq93uTI/Sv8Q8Autco8JGG5+wjzACP5GtDMQKcsl20O8IR8dFUJSOWuJw5VLISnMpBhCQlMG4UkCKJ6xP9a/zZPbD2rgNYe9cBrL2rAHXv6hAcu1ZMEQ85LkoE52/UVQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wNi0wN1QxNDozNzo0OCswMDowMMTsjtEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDYtMDdUMTQ6Mzc6NDgrMDA6MDC1sTZtAAAAIHRFWHRzb2Z0d2FyZQBodHRwczovL2ltYWdlbWFnaWNrLm9yZ7zPHZ0AAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6SGVpZ2h0ADUxMo+NU4EAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNjg2MTQ4NjY4FV5fYAAAABJ0RVh0VGh1bWI6OlNpemUAMjMzMUJCA2kE6gAAAEF0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L21mTk9KQTMvMzk3OS9jbG9uZV9pY29uXzI1MTk1MC5wbmcALldKAAAAAElFTkSuQmCC'
 
 # ============== Functions ==============
 
@@ -382,7 +382,7 @@ def popup(event):
         tree.selection_set(iid)
         tree_contextMenu.post(event.x_root, event.y_root)
 
-# TODO: To make
+# TODO: Create a Toplevel that is just a long doc description of the many things.
 def help():
     unavailable()
 
@@ -396,6 +396,7 @@ win = tk.Tk()
 win.geometry('1000x500')
 win.minsize(650, 300)
 win.title('Excel Reader')
+win.iconphoto(False, tk.PhotoImage(data=icon_base64))
 
 """Creating the Top Menu"""
 
@@ -418,7 +419,7 @@ entryMenu.add_cascade(label='Search SigmaAldrich', menu=SigmaMenuTop)
 SigmaMenuTop.add_command(label='CAS', command=search_sigma_cas)
 SigmaMenuTop.add_command(label='Name', command=search_sigma_name)
 
-mainMenu.add_command(label = 'Help', command=unavailable)    # TODO: To Make
+mainMenu.add_command(label = 'Help', command=help)    # TODO: To Make
 
 """Main TreeView Context Menu"""
 
