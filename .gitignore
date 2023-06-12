@@ -2,3 +2,7 @@
 maingrid.exe
 Command for pyinstaller.txt
 upx/
+dist/
+build/
+*.spec
+*.xlsx
